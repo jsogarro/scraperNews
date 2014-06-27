@@ -1,0 +1,14 @@
+{
+  "name": "scraperNews",
+  "version": "0.0.1",
+  "repository": "https://github.com/jsogarro/scraperNews",
+  "license": "MIT",
+  "description": "Simple Node program that scrapes the top stories on Hacker News.",
+  "author": "Jamal O'Garro <@jsogarro>",
+  "dependencies": {
+    "request": "latest",
+    "cheerio": "latest",
+    "prompt": "latest"
+  },
+  "engines": { "node": ">= 0.10.0" }
+}
