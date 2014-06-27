@@ -36,7 +36,7 @@ request('https://news.ycombinator.com', function(err, res, html) {
      	}
 
     	// Prompt user to select story
-    	console.log("Select a story number to view");
+    	console.log("Select a story to view in browser (input story number)");
 
     	prompt.start();
     	prompt.get(['storyChoice'], function(err, result) {
@@ -46,7 +46,7 @@ request('https://news.ycombinator.com', function(err, res, html) {
     			var url = stories[storyChoice - 1].url;
     			openURL(url);	
     		} else {
-    			console.log("Error with input. Terminating program!");
+    			console.log("Error with input, please only use number for choice. Terminating program!");
     		}
     	
     	});
