@@ -40,9 +40,14 @@ request('https://news.ycombinator.com', function(err, res, html) {
 
     	prompt.start();
     	prompt.get(['storyChoice'], function(err, result) {
-
-    		var url = stories[result.storyChoice - 1].url;
-    		openURL(url);	
+    		storyChoice = parseInt(result.storyChoice);
+    		console.log(typeof(storyChoice));
+    		if (typeof(storyChoice) == 'number' && storyChoice < 31) {
+    			var url = stories[storyChoice - 1].url;
+    			openURL(url);	
+    		} else {
+    			console.log("Error with input. Terminating program!");
+    		}
     	
     	});
     	
