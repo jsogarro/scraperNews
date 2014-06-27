@@ -25,23 +25,23 @@ request('https://news.ycombinator.com', function(err, res, html) {
     	// Add each story object to the stories array
     	stories.push(story);
 
-     	// Print story to the console
+    });
+
+        // Print story to the console
      	for (story in stories) {
      		var story = stories[story];
 
      		console.log(story.number + ') ' + story.title);
-     		// console.log(story.url);
-     		// console.log("________");
+
      	}
 
-    });
     	// Prompt user to select story
     	console.log("Select a story number to view");
 
     	prompt.start();
     	prompt.get(['storyChoice'], function(err, result) {
     		storyChoice = parseInt(result.storyChoice);
-    		console.log(typeof(storyChoice));
+ 
     		if (typeof(storyChoice) == 'number' && storyChoice < 31) {
     			var url = stories[storyChoice - 1].url;
     			openURL(url);	
