@@ -10,7 +10,17 @@ request('https://news.ycombinator.com', function(err, res, html) {
 
     $('span.comhead').each(function(i, element) {
     	var a = $(this).prev();
-    	console.log(a.text());
+
+    	var title = a.text();
+    	var url = a.attr('href');
+
+
+    	var story = {
+    		title: title,
+    		url: url 
+    	};
+
+    	console.log(story);
     })
 
   } else {
